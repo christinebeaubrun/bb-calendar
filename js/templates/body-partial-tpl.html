@@ -1,0 +1,13 @@
+{{#each tableRows}}
+  <tr>
+    {{#each this}}
+      {{#if this.isToday}}
+        <td class="today table-cell">{{this.dateValue}}</td>
+      {{else if this.dateValue}}
+        <td class="table-cell">{{this.dateValue}}</td>
+      {{else}}
+        <td class="nil"></td>
+      {{/if}}
+    {{/each}}
+  </tr>
+{{/each}}

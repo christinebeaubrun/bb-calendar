@@ -1,5 +1,3 @@
-"use strict";
-
 require.config({
   baseUrl: 'js/libs',
   paths: {
@@ -22,15 +20,20 @@ require.config({
     },
     'mustache': {
       exports: 'Mustache'
+    },
+    'handlebars': {
+      exports: 'Handlebars'
     }
   }
 });
 
-require([
+require([  
   'jquery',
   'views/app-view'
   ], function($, AppView){
     $(function () {
+      "use strict";
+
       var appView = new AppView();
       appView.render();
     });

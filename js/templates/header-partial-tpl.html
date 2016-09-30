@@ -1,0 +1,19 @@
+<div class='header'>
+  <span class='left-btn button' id='previous-month-btn'>&lang;</span>
+  <span class='left hook'></span>
+  <span class='month-year-label' id='month-year-label'>{{currentMonthName}} {{currentYear}}</span>
+  <span class='right hook'></span>
+  <span class='right-btn button' id='next-month-btn'>&rang;</span>
+</div>
+<table class='calendar-table'>
+  <tr class='days-of-week'>
+    <th>Sunday</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+  </tr>
+  {{> tableRows}}
+</table>

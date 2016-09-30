@@ -5,16 +5,20 @@ define(function (require) {
     _ = require('underscore'),
     Backbone = require('backbone'),
     Mustache = require('mustache'),
-    CalendarModel = require('models/calendar-model'),
-    calTpl = require('text!templates/calendar-template.html');
+    CalendarView = require('views/calendar-view'),
+    CalendarModel = require( 'models/calendar-model'),
+    AppTpl = require('text!templates/app-template.html');
 
-  var cModel = new CalendarModel();
+  var cModel = new CalendarModel(),
+    cView = new CalendarView( {model: cModel} );
+
   var AppView = Backbone.View.extend({
     el: '#app-view',
-    template: Mustache.to_html( calTpl, cModel.attributes ),
-    // template: Mustache.to_html( appTpl, {message: 'Hello there Christine!'} ),
+    template: Mustache.render( AppTpl ),
     render: function () {
       this.$el.html( this.template );
+      this.$el.append( cView.render().el )
+
       return this;
     }
   });
